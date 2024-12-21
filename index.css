@@ -1,0 +1,139 @@
+:root{
+    --main-bg-color: #1C1C1C;
+    --alt-bg-color: #2E2E2E;
+    --subtle-border-color: #4A4A4A;
+    --hover-color: #008C9E;
+    --accent-color: #FF6F00;
+    --text-color: #A8A8A8;
+    --heading-color: #F4F4F2;
+    
+}
+
+body{
+    background-color: var(--alt-bg-color);
+}
+
+#col1{
+    background-color: var(--main-bg-color);
+    border: solid 4px var(--subtle-border-color);
+    border-radius: 4px;
+    border-left: none;
+}
+#col2{
+    background-color: var(--alt-bg-color);
+    border-right: solid 4px var(--subtle-border-color);
+}
+
+.profile-pic {
+    width: 150px; /* Set the size of the circle */
+    height: 150px;
+    object-fit: cover; /* Maintain aspect ratio and crop if needed */
+    border-radius: 50%; /* Makes the image circular */
+    border: 3px solid var(--accent-color); /* Optional: Add a border around the circle */
+}
+
+.icon-circle {
+    width: 40px; /* Circle size */
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Makes the div circular */
+    background-color: var(--alt-bg-color); /* Circle background color */
+    border: 2px solid var(--accent-color); /* Optional: Add a border */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth hover effect */
+    position: relative;
+}
+.icon-circle:hover{
+    /* background-color: black; /* New circle color on hover */
+    color: var(--hover-color);
+    border-color: var(--hover-color);
+    transform: scale(1.3); /* Slight zoom effect */
+}
+
+
+.icon {
+    font-size: 1.25rem; /* Icon size */
+    color: var(--accent-color); /* Icon color */
+    transition: color 0.3s; /* Smooth hover effect for other icons */
+}
+
+.icon-circle:hover .icon {
+    color: var(--hover-color); /* Change icon color on hover */
+}
+
+.nav-link{
+    border-radius: 5px;
+    font-size: 1.25rem;
+    transition: background-color 0.3s, transform 0.3s; /* Smooth hover effect */
+    width: 95%;
+}
+.nav-link:hover{
+    background-color: var(--hover-color);
+    color: var(--main-bg-color);
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+.nav-link.active{
+    transform: scale(1.05); /* Slight zoom effect */
+    background-color: var(--accent-color);
+    color: var(--main-bg-color);
+    padding-right: 0;
+    border: 2px solid var(--subtle-border-color);
+    border-radius: 5px;
+    
+}
+
+.icon-envelope {
+    font-size: 24px; /* Icon size */
+    color: var(--accent-color); /* Default icon color */
+    position: absolute; /* Align icons perfectly inside the circle */
+    transition: opacity 0.3s; /* Smooth fade effect */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the icon */
+}
+
+.icon-circle:hover .icon-envelope.default {
+    opacity: 0; /* Hide the default icon */
+    color: var(--hover-color)
+}
+
+.icon-circle:hover .icon-envelope.hover {
+    opacity: 1; /* Show the hover icon */
+    color: var(--hover-color);
+}
+
+.icon-envelope.hover {
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s; /* Smooth fade effect */
+    color: var(--hover-color)
+}
+
+@keyframes ripple{
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); opacity:1; }
+    100% { transform: scale(1.6); opacity:0; }
+}
+
+.icon-circle:before, .icon-circle:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0; 
+  right: 0; 
+  bottom: 0; 
+  left: 0;
+  border: 0.1px solid var(--accent-color);
+  border-radius: 50%;
+}
+
+.icon-circle:hover:before{
+    border-color: var(--hover-color);
+    animation: ripple 1s linear 0.8s infinite;
+}
+
+.icon-circle:hover:after{
+    border-color: var(--hover-color);
+    animation: ripple 1s linear 0.8s infinite;
+}
