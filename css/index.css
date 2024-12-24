@@ -5,12 +5,12 @@
     --hover-color: #008C9E;
     --accent-color: #FF6F00;
     --text-color: #A8A8A8;
-    --heading-color: #F4F4F2;
-    
+    --heading-color: #F4F4F2; 
 }
 
 body{
     background-color: var(--alt-bg-color);
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 }
 
 #col1{
@@ -25,23 +25,23 @@ body{
 }
 
 .profile-pic {
-    width: 150px; /* Set the size of the circle */
+    width: 150px; 
     height: 150px;
-    object-fit: cover; /* Maintain aspect ratio and crop if needed */
-    border-radius: 50%; /* Makes the image circular */
-    border: 3px solid var(--accent-color); /* Optional: Add a border around the circle */
+    object-fit: cover; 
+    border-radius: 50%; 
+    border: 3px solid var(--accent-color); 
 }
 
 .icon-circle {
-    width: 40px; /* Circle size */
+    width: 40px; 
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%; /* Makes the div circular */
-    background-color: var(--alt-bg-color); /* Circle background color */
-    border: 2px solid var(--accent-color); /* Optional: Add a border */
-    transition: background-color 0.3s, transform 0.3s; /* Smooth hover effect */
+    border-radius: 50%; 
+    background-color: var(--alt-bg-color);
+    border: 2px solid var(--accent-color); 
+    transition: background-color 0.3s, transform 0.3s;
     position: relative;
 }
 .icon-circle:hover{
@@ -64,34 +64,64 @@ body{
 
 .nav-link{
     border-radius: 5px;
-    font-size: 1.25rem;
-    transition: background-color 0.3s, transform 0.3s; /* Smooth hover effect */
+    font-size: 1.5rem;
+    transition: background-color 0.3s, transform 0.3s;
     width: 95%;
+    height: 15%;
+    align-items: center;
+    display: flex;
+    position: relative;
 }
-.nav-link:hover{
-    background-color: var(--hover-color);
-    color: var(--main-bg-color);
-    transform: scale(1.05); /* Slight zoom effect */
+
+.nav-link::after {
+    position: absolute;
+    content: '';
+    height: 3px;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    background: var(--accent-color);
+    transition: width 0.5s;
+  }
+
+/* .nav-link:hover{
+    background-color: var(--alt-bg-color);
+    color: var(--heading-color);
+    transform: scale(1.05);
+}  */
+
+
+.nav-link:hover::after{
+    width: 100%;
 }
 
 .nav-link.active{
-    transform: scale(1.05); /* Slight zoom effect */
-    background-color: var(--accent-color);
-    color: var(--main-bg-color);
+    transform: scale(1.05);
+    /* background-color: var(--alt-bg-color); */
+    color: var(--heading-color);
     padding-right: 0;
-    border: 2px solid var(--subtle-border-color);
-    border-radius: 5px;
-    
+    /* border: 2px solid var(--subtle-border-color); */
+    /* border-radius: 5px; */
+}
+
+.nav-link.active:after{
+    position: absolute;
+    content: '';
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: var(--accent-color);
 }
 
 .icon-envelope {
-    font-size: 24px; /* Icon size */
-    color: var(--accent-color); /* Default icon color */
-    position: absolute; /* Align icons perfectly inside the circle */
-    transition: opacity 0.3s; /* Smooth fade effect */
+    font-size: 24px; 
+    color: var(--accent-color); 
+    position: absolute; 
+    transition: opacity 0.3s; 
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Centers the icon */
+    transform: translate(-50%, -50%); 
 }
 
 .icon-circle:hover .icon-envelope.default {
@@ -105,8 +135,8 @@ body{
 }
 
 .icon-envelope.hover {
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.3s; /* Smooth fade effect */
+    opacity: 0;
+    transition: opacity 0.3s;
     color: var(--hover-color)
 }
 
@@ -126,14 +156,15 @@ body{
   left: 0;
   border: 0.1px solid var(--accent-color);
   border-radius: 50%;
+  pointer-events: none;
 }
 
 .icon-circle:hover:before{
     border-color: var(--hover-color);
-    animation: ripple 1s linear 0.8s infinite;
+    animation: ripple 1s linear 0s infinite;
 }
 
 .icon-circle:hover:after{
     border-color: var(--hover-color);
-    animation: ripple 1s linear 0.8s infinite;
+    animation: ripple 1s linear 0s infinite;
 }
