@@ -1,18 +1,5 @@
-
-// document.querySelectorAll('.nav-link').forEach(link => {
-//     link.addEventListener('click', function () {
-
-//         document.querySelectorAll('.nav-link').forEach(l => {
-//             l.classList.remove('active');
-//         });
-
-//         this.classList.add('active');
-//     });
-// });
-
 document.addEventListener("DOMContentLoaded", () => {
     const links = document.querySelectorAll(".nav-link");
-    const nav = document.querySelector(".vertical-nav");
     const content_frame = document.getElementById("content-frame");
 
   
