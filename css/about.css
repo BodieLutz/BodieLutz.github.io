@@ -13,16 +13,22 @@ body{
     font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 }
 
+#content{
+    padding: 10px 20px;
+}
+
 *{
     background-color: var(--alt-bg-color);
 }
 
-h3{
+h4{
     color: var(--heading-color);
 }
 
 p{
     color: var(--text-color);
+    font-size: 1.05rem;
+    text-align: left;
 }
 
 #btn-div{

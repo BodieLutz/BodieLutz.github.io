@@ -26,7 +26,7 @@ body{
 #col2{
     /* background-color: var(--alt-bg-color);
     border-right: solid 4px var(--subtle-border-color); */
-    height: 90vh;
+    height: 92vh;
     padding-left: 0;
     margin-left: -7px; /* Probably need to change this */
 }
