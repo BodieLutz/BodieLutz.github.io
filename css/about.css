@@ -42,7 +42,7 @@ p{
 
 button{
     color: var(--accent-color);
-    background-color: var(--alt-bg-color);
+    background-color: var(--main-bg-color);
     border: solid 2px var(--accent-color);
     border-radius: 5px;
     /* box-shadow: 0 0 10px var(--accent-color), 0 0 10px var(--accent-color), 0 0 10px var(--accent-color); */
@@ -55,9 +55,7 @@ button{
 }
 
 button:hover{
-    /* background-color: var(--hover-color); */
     color: var(--main-bg-color);
-    /* box-shadow: 0 0 10px var(--hover-color), 0 0 10px var(--hover-color), 0 0 10px var(--hover-color); */
 }
 
 button::before{
