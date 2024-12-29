@@ -33,36 +33,6 @@ p, li{
     text-align: left;
 }
 
-details summary{
-    font-size: 1.2rem;
-}
-
-details {
-    background-color: var(--main-bg-color);
-    border-radius: 4px;
-    box-shadow: 3px 3px 5px var(--accent-color);
-    width: 75%;
-    margin: 1.5% 0 1% 0;
-    padding: 5px 20px 5px 20px;
-}
-
-details summary{
-    color: var(--accent-color);
-}
-
-details:hover summary{
-    color: var(--hover-color);
-}
-
-details[open], details:hover {
-    box-shadow: 3px 3px 5px var(--hover-color);
-    color: var(--hover-color);
-}
-
-details[open] summary{
-    color: var(--hover-color);
-}
-
 #course-div{
     display: flex;
     flex-direction: column;
