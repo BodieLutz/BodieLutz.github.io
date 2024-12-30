@@ -4,6 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const contactLink = parentDocument.getElementById("contact-link");
 
     if (contactLink.classList.contains("active")) {
+        alert("Contact link is active");
         emailButton.style.animation = "ripple 1s linear 0s infinite;";
     }
+
+    emailButton.style.animation = "ripple 1s linear 0s infinite;";
 });
