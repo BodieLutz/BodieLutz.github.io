@@ -46,7 +46,7 @@ p, li{
     color: var(--accent-color);
     border-color: var(--accent-color);
     border-radius: 10px;
-    transition: ease-out 0.5s;
+    transition: ease-out 0.8s;
     width: 40%;
     margin: 1% 0 1% 0;
     font-weight: bold;
