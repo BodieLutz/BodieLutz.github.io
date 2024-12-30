@@ -8,5 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
         emailButton.style.animation = "ripple 1s linear 0s infinite;";
     }
 
-    emailButton.style.animation = "ripple 1s linear 0s infinite;";
+    contactLink.addEventListener("click", () => {
+        emailButton.style.animation = "ripple 1s linear 0s infinite";
+    });
 });
