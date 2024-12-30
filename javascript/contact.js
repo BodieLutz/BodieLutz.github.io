@@ -5,10 +5,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (contactLink.classList.contains("active")) {
         alert("Contact link is active");
-        emailButton.style.animation = "ripple 1s linear 0s infinite;";
+        // emailButton.style.animation = "ripple 1s linear 0s infinite;";
+        // Define the keyframes for the ripple effect
+        const rippleKeyframes = [
+            { transform: 'scale(1)', opacity: 1 },
+            { transform: 'scale(1.3)', opacity: 1 },
+            { transform: 'scale(1.6)', opacity: 0 },
+        ];
+    
+        // Define animation options
+        const rippleOptions = {
+            duration: 1000, // Animation duration in milliseconds
+            iterations: 5,  // Number of times to run the animation (1 for single run)
+            easing: 'linear', // Easing function
+        };
+
+        contactLink.animate(rippleKeyframes, rippleOptions);
     }
 
-    contactLink.addEventListener("click", () => {
-        emailButton.style.animation = "ripple 1s linear 0s infinite";
-    });
 });
