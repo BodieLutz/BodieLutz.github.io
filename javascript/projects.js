@@ -19,9 +19,9 @@
     function generateProjects(projects) {
         const timeline = document.getElementById("projects-timeline");
 
-        let projectCard = "";
         //generate HTML for each project
         projects.forEach((project) => {
+            let projectCard = "";
             //if project must be private...
             if (project.link === "#") {
                 projectCard = `
