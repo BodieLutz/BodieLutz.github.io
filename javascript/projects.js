@@ -1,10 +1,9 @@
 // projects.js
-document.addEventListener("DOMContentLoaded", () => {
 
     //Fetch projects from local JSON file
     async function getProjects() {
         try {
-            const response = await fetch("projects.json");
+            const response = await fetch("./projects.json");
             if (!response.ok) {
                 throw new Error(`Could not fetch local project data! status: ${response.status}`);
             }
@@ -27,9 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="timeline-item">
                     <div class="card mb-3">
                         <div class="cardBody">
-                            <h5 class="card-title">{project.title}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">{new Date(project.date).toLocaleDateString()}</h6>
-                            <p class="card-text">{project.description}</p>
+                            <h5 class="card-title">${project.title}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">${new Date(project.date).toLocaleDateString()}</h6>
+                            <p class="card-text">${project.description}</p>
                             <p class="non-link">Sorry, this was a school project and must remain private :)</p>
                         </div>
                     </div>
@@ -41,10 +40,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="timeline-item">
                     <div class="card mb-3">
                         <div class="cardBody">
-                            <h5 class="card-title">{project.title}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">{new Date(project.date).toLocaleDateString()}</h6>
-                            <p class="card-text">{project.description}</p>
-                            <a href="{project.link}" class="card-link">View Project</a>
+                            <h5 class="card-title">${project.title}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">${new Date(project.date).toLocaleDateString()}</h6>
+                            <p class="card-text">${project.description}</p>
+                            <a href="${project.link}" class="card-link">View Project</a>
                         </div>
                     </div>
                 </div>`; 
@@ -52,4 +51,5 @@ document.addEventListener("DOMContentLoaded", () => {
             timeline.innerHTML += projectCard;         
         });
     }
-});
+
+document.addEventListener("DOMContentLoaded", getProjects);
