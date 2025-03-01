@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Define animation options
         const rippleOptions = {
             duration: 1000, // Animation duration in milliseconds
-            iterations: 5,  // Number of times to run the animation (1 for single run)
+            iterations: 10,  // Number of times to run the animation (1 for single run)
             easing: 'linear', // Easing function
         };
 
