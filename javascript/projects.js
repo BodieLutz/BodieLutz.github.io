@@ -18,11 +18,13 @@
     //Javascript generator to generate HTML for projects
     function generateProjects(projects) {
         const timeline = document.getElementById("projects-timeline");
+
+        let projectCard = "";
         //generate HTML for each project
         projects.forEach((project) => {
             //if project must be private...
             if (project.link === "#") {
-                const projectCard = `
+                projectCard = `
                 <div class="timeline-item">
                     <div class="card mb-3">
                         <div class="cardBody">
@@ -36,7 +38,7 @@
             } 
             
             else {
-                const projectCard = `
+                projectCard = `
                 <div class="timeline-item">
                     <div class="card mb-3">
                         <div class="cardBody">
