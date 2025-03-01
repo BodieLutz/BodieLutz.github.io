@@ -21,15 +21,27 @@ document.addEventListener("DOMContentLoaded", () => {
         const timeline = document.getElementById("timeline");
         //generate HTML for each project
         projects.forEach((project) => {
-            const projectCard = `
-            <div class="card mb-3">
-                <div class="cardBody">
-                    <h5 class="card-title">{project.title}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">{new Date(project.date).toLocaleDateString()}</h6>
-                    <p class="card-text">{project.description}</p>
-                    <a href="{project.link}" class="card-link">View Project</a>
-                </div>
-            </div>`; 
+            if (project.link === "#") {
+                const projectCard = `
+                <div class="card mb-3">
+                    <div class="cardBody">
+                        <h5 class="card-title">{project.title}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{new Date(project.date).toLocaleDateString()}</h6>
+                        <p class="card-text">{project.description}</p>
+                        <p class="non-link">Sorry, this was a school project and must remain private :)</p>
+                    </div>
+                </div>`; 
+            } else {
+                const projectCard = `
+                <div class="card mb-3">
+                    <div class="cardBody">
+                        <h5 class="card-title">{project.title}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{new Date(project.date).toLocaleDateString()}</h6>
+                        <p class="card-text">{project.description}</p>
+                        <a href="{project.link}" class="card-link">View Project</a>
+                    </div>
+                </div>`; 
+        }
             timeline.innerHTML += projectCard;         
         });
     }
