@@ -3,7 +3,7 @@
     //Fetch projects from local JSON file
     async function getProjects() {
         try {
-            const response = await fetch("./projects.json");
+            const response = await fetch("/javascript/projects.json");
             if (!response.ok) {
                 throw new Error(`Could not fetch local project data! status: ${response.status}`);
             }
