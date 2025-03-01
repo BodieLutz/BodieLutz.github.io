@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
             easing: 'linear', // Easing function
         };
 
-        emailButton.animate(rippleKeyframes, rippleOptions);
+        // emailButton.animate(rippleKeyframes, rippleOptions);
     }
 
 });
