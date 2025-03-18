@@ -21,11 +21,11 @@ function generateCards(projects){
         `
         <h3>${project.title}</h3>
         <p>${project.description}</p>
-        ${card_link}
         <p>${project.technologies}</p>
         <p>${project.date}</p>
          `;
 
+        card.appendChild(card_link);
         carousel.appendChild(card);
     });
 }
