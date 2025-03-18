@@ -60,13 +60,23 @@ h2{
   min-width: 80vw;
   max-width: 80vw;
   height: 60vh;
-  background: lightblue;
+  background: var(--hover-color);
+  color: var(--main-bg-color);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
   border-radius: 10px;
   scroll-snap-align: center;
+  border: solid 3px var(--accent-color);
+}
+
+.card p,.card a{
+  font-size: 1.1rem;
+  color: var(--main-bg-color);
+}
+
+.card h3{
+  font-size: 1.5rem;
 }
 
 .button-div{
