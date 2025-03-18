@@ -70,9 +70,14 @@ h2{
   border: solid 3px var(--accent-color);
 }
 
-.card p,.card a{
+.card p{
   font-size: 1.1rem;
-  color: var(--main-bg-color);
+  color: var(--heading-color);
+}
+
+.card a{
+  color: var(--accent-color);
+  font-size: 1.1rem;
 }
 
 .card h3{
@@ -124,4 +129,8 @@ button:hover:before{
   opacity: 1;
   z-index: -1;
   pointer-events: none;
+}
+
+.no-link{
+  color: var(--accent-color);
 }

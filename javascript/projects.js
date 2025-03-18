@@ -7,25 +7,33 @@ function generateCards(projects){
 
         let card_link = null;
         if(project.link === "#"){
-            card_link = document.createElement("p");
-            card_link.innerHTML = "Sorry, this project is not available on Github!";
-            card_link.style.color = "#FF6F00";
+            card.innerHTML = 
+                `
+                <h3>${project.title}</h3>
+                <p>${project.description}</p>
+                <p>${project.technologies}</p>
+                <p class="no-link">Sorry, this project is not available on Github!</p>
+                <p>${project.date}</p>
+                `;
         }else{
             card_link = document.createElement("a");
             card_link.href = project.link;
             card_link.target = "_blank";
             card_link.innerHTML = "View This Project On Github!";
+
+            card.innerHTML = 
+                `
+                <h3>${project.title}</h3>
+                <p>${project.description}</p>
+                <p>${project.technologies}</p>
+                <a href="${project.link}" target="_blank">View This Project On Github!</a>
+                <p>${project.date}</p>
+                `;
+
         }
 
-        card.innerHTML = 
-        `
-        <h3>${project.title}</h3>
-        <p>${project.description}</p>
-        <p>${project.technologies}</p>
-        <p>${project.date}</p>
-         `;
+        
 
-        card.appendChild(card_link);
         carousel.appendChild(card);
     });
 }
