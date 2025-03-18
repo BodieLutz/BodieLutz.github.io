@@ -3,7 +3,8 @@
         "title": "testing project",
         "description": "this is a test project",
         "date": "2021-01-01",
-        "link": "https://www.google.com"
+        "link": "https://www.google.com",
+        "technologies": ["java"]
 
     },
 
@@ -11,7 +12,7 @@
         "title": "non link project",
         "description": "this project does not have a link!",
         "date": "2021-01-01",
-        "link": "#"
-
+        "link": "#",
+        "technologies": ["html", "css", "javascript"]
     }
 ]

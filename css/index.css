@@ -177,7 +177,7 @@ body{
     animation: ripple 1s linear 0s infinite;
 }
 
-@keyframes swipeDown {
+/* @keyframes swipeDown {
     0% {
       transform: translateY(-100%);
     }
@@ -193,7 +193,7 @@ body{
     100% {
       transform: translateY(100%);
     }
-  }
+  } */
 
 #col2{
     position: relative;

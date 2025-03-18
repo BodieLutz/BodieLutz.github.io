@@ -1,57 +1,38 @@
-// projects.js
+const carousel = document.querySelector(".carousel");
 
-    //Fetch projects from local JSON file
-    async function getProjects() {
-        try {
-            const response = await fetch("/javascript/projects.json");
-            if (!response.ok) {
-                throw new Error(`Could not fetch local project data! status: ${response.status}`);
-            }
-            const projects = await response.json();
-            generateProjects(projects);
-        }
-        catch (error) {
-            console.error(`Error fetching projects: ${error}`);
-        }
-    }
+function generateCards(projects){
+    projects.forEach((project) => {
+        const card = document.createElement("div");
+        card.classList.add("card");
 
-    //Javascript generator to generate HTML for projects
-    function generateProjects(projects) {
-        const timeline = document.getElementById("projects-timeline");
+        card.innerHTML = 
+        `
+        <h3>${project.title}</h3>
+        <p>${project.description}</p>
+        <a href="${project.link}" target="_blank">View This Project On Github!</a>
+        <p>${project.technologies}</p>
+        <p>${project.date}</p>
+         `;
 
-        //generate HTML for each project
-        projects.forEach((project) => {
-            let projectCard = "";
-            //if project must be private...
-            if (project.link === "#") {
-                projectCard = `
-                <div class="timeline-item">
-                    <div class="card mb-3">
-                        <div class="cardBody">
-                            <h5 class="card-title">${project.title}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">${new Date(project.date).toLocaleDateString()}</h6>
-                            <p class="card-text">${project.description}</p>
-                            <p class="non-link">Sorry, this was a school project and must remain private :)</p>
-                        </div>
-                    </div>
-                </div>`; 
-            } 
-            
-            else {
-                projectCard = `
-                <div class="timeline-item">
-                    <div class="card mb-3">
-                        <div class="cardBody">
-                            <h5 class="card-title">${project.title}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">${new Date(project.date).toLocaleDateString()}</h6>
-                            <p class="card-text">${project.description}</p>
-                            <a href="${project.link}" class="card-link">View Project</a>
-                        </div>
-                    </div>
-                </div>`; 
-            }
-            timeline.innerHTML += projectCard;         
-        });
-    }
+        carousel.appendChild(card);
+    });
+}
 
-document.addEventListener("DOMContentLoaded", getProjects);
+fetch("javascript/projects.json")
+    .then((response) => response.json())
+    .then(projects => {
+        generateCards(projects);
+    })
+    .catch((error) => {
+        console.error("Error loading JSON data:", error);
+    });
+
+
+
+document.getElementById("next").addEventListener("click", () => {
+    carousel.scrollBy({ left: 110, behavior: "smooth" });
+});
+
+document.getElementById("prev").addEventListener("click", () => {
+    carousel.scrollBy({ left: -110, behavior: "smooth" });
+});
