@@ -12,7 +12,7 @@ function generateCards(projects){
                 <h3>${project.title}</h3>
                 <p>${project.description}</p>
                 <p>${project.technologies}</p>
-                <p class="no-link">Sorry, this project is not available on Github!</p>
+                <p>Sorry, this project is not available on Github!</p>
                 <p>${project.date}</p>
                 `;
         }else{
