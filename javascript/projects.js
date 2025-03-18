@@ -5,17 +5,18 @@ function generateCards(projects){
         const card = document.createElement("div");
         card.classList.add("card");
 
+        let card_link = null;
         if(project.link === "#"){
-            let card_link = document.createElement("p");
+            card_link = document.createElement("p");
             card_link.innerHTML = "Sorry, this project is not available on Github!";
             card_link.style.color = "#FF6F00";
         }else{
-            let card_link = document.createElement("a");
+            card_link = document.createElement("a");
             card_link.href = project.link;
             card_link.target = "_blank";
             card_link.innerHTML = "View This Project On Github!";
         }
-        
+
         card.innerHTML = 
         `
         <h3>${project.title}</h3>
