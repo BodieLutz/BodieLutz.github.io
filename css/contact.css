@@ -29,6 +29,7 @@ main{
     align-items: center;
     text-align: center;
     flex-direction: column;
+    width: 70%;
 }
 
 button{
@@ -43,6 +44,11 @@ button{
     position: relative;
     z-index: 1;
     font-size: 1.5rem !important;
+    width: 100%;
+}
+
+a{
+    width: 100%;
 }
 
 button:hover{
@@ -72,10 +78,27 @@ button:hover:before{
 }
 
 p{
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     color: var(--text-color)
+}
+
+.parent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .container{
     margin: 4% 0 2% 0;
+    border: 2px solid var(--accent-color);
+    border-radius: 5px;
+    background-color: var(--main-bg-color);
+    display: flex;
+    flex-direction: column;
+    max-width: 40%;
+    padding: 2%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
