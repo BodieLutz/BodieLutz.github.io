@@ -3,7 +3,7 @@
         "title": "Full Stack Nutrition Web Application",
         "description": "Most of the nutrition applications available today do a great job of tracking calories and macronutrients, but one critical shortfall in the dieting process is creating home-cooked meals. A lof of the existing apps have potentional to track home-cooked meals, but it is a labor-intensive process. Or, more simply, it falls on the user to bust out the calculator and do some math to calculate the nutrition of their recipe. This application aims to address this by consolidating the calculation process in a simple, easy to use web page.",
         "date": "10/2023 - 12/2023",
-        "link": "#",
+        "link": "https://github.com/BodieLutz/NutriCheck.git",
         "technologies": ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "Apache", ""]
 
     },
