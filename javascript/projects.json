@@ -1,18 +1,34 @@
 [
     {
-        "title": "testing project",
-        "description": "this is a test project",
-        "date": "2021-01-01",
-        "link": "https://www.google.com",
-        "technologies": ["java"]
+        "title": "Full Stack Nutrition Web Application",
+        "description": "Most of the nutrition applications available today do a great job of tracking calories and macronutrients, but one critical shortfall in the dieting process is creating home-cooked meals. A lof of the existing apps have potentional to track home-cooked meals, but it is a labor-intensive process. Or, more simply, it falls on the user to bust out the calculator and do some math to calculate the nutrition of their recipe. This application aims to address this by consolidating the calculation process in a simple, easy to use web page.",
+        "date": "10/2023 - 12/2023",
+        "link": "#",
+        "technologies": ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "Apache", ""]
 
     },
 
     {
-        "title": "non link project",
-        "description": "this project does not have a link!",
-        "date": "2021-01-01",
+        "title": "CSM TA Assignment Autmoation Utility",
+        "description": "As part of the Colorado School of Mines advanced software engineering course, my team was tasked with creating a utility to automate the assignment of teaching assistants to professors. This application created experience in front-end and back-end development, as well as algorithmic design as a number of preferences, variables, and guidelines needed to be considered when making the TA-professor assignments across hundreds of professors and students.",
+        "date": "06/2023 - 08/2023",
         "link": "#",
-        "technologies": ["html", "css", "javascript"]
+        "technologies": ["Java", "JavaFX"]
+    },
+
+    {
+        "title": "Clue-inspired Desktop Game",
+        "description": "08/2021 - 12/2021",
+        "date": "The main semester project in the Colorado School of Mines software engineering course that taught the primary software engineering principles such as OOP, SOLID, DRY, and TDD. We were tasked to develop a desktop game solely in Java with the help of Java Swing based on the popular board game Clue. ",
+        "link": "#",
+        "technologies": ["Java", "Java Swing"]
+    },
+
+    {
+        "title": "Theseus and The Minotaur Simulation",
+        "description": "08/2023 - 09/2023",
+        "date": "Theseus and The Minotaur is a classic game theory problem that was used as the template to challenge students' advanced algorithmic design and understanding of fundamental graph theory concepts.",
+        "link": "#",
+        "technologies": ["Python"]
     }
 ]
