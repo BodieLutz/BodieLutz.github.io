@@ -45,9 +45,10 @@ h6, .h6 { font-size: 1rem; font-weight: 500; line-height: 1.2; margin-bottom: 0.
   .timeline {
     background-color: var(--alt-bg-color);
     margin: 20px auto;
-    padding: 20px;  
-    overflow: none;  
+    padding: 20px;
+    overflow: none;
     height: 87vh;
+    height: 87dvh;
   }
   
   /* Card container */
