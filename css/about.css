@@ -14,7 +14,7 @@ body{
 }
 
 #content{
-    padding: 10px 20px;
+    padding: clamp(8px, 2%, 10px) clamp(10px, 3%, 20px);
 }
 
 *{
