@@ -1,29 +1,8 @@
-:root{
-    --main-bg-color: #1C1C1C;
-    --alt-bg-color: #2E2E2E;
-    --subtle-border-color: #4A4A4A;
-    --hover-color: #008C9E;
-    --accent-color: #FF6F00;
-    --text-color: #A8A8A8;
-    --heading-color: #F4F4F2; 
-}
-
-html{
-    background-color: var(--alt-bg-color);
-    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
-}
-
-main{
-    background-color: var(--alt-bg-color);
-    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+main {
     padding: 2% 0 0 3%;
 }
 
-*{
-    color: var(--heading-color);
-}
-
-#btn-div{
+#btn-div {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,64 +11,27 @@ main{
     width: min(90%, 400px);
 }
 
-button{
-    color: var(--accent-color);
-    background-color: var(--main-bg-color);
-    border: solid 2px var(--accent-color);
-    border-radius: 5px !important;
-    transition: all 0.5s ease;
-    outline: none;
-    font-weight: bold;
-    padding: 2px 10px;
-    position: relative;
-    z-index: 1;
-    font-size: clamp(1rem, 2.5vw, 1.5rem) !important;
+button {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
     width: 100%;
 }
 
-a{
+a {
     width: 100%;
 }
 
-button:hover{
-    color: var(--main-bg-color);
-}
-
-button::before{
-    transition: all 0.5s ease;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    right: 50%;
-    opacity: 0;
-    content: '';
-    background-color: var(--accent-color);
-    z-index: -1;
-}
-
-button:hover:before{
-    transition: all 0.7s ease;
-    left: 0;
-    right: 0;
-    opacity: 1;
-    z-index: -1;
-    pointer-events: none;
-}
-
-p{
+p {
     font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-    color: var(--text-color)
 }
 
-.parent{
+.parent {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.container{
+.container {
     margin: 4% 0 2% 0;
     border: 2px solid var(--accent-color);
     border-radius: 5px;
@@ -97,7 +39,7 @@ p{
     display: flex;
     flex-direction: column;
     max-width: min(90%, 400px);
-    padding: 2%;
+    padding: var(--space-md);
     justify-content: center;
     align-items: center;
     text-align: center;
