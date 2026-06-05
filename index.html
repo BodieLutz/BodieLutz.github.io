@@ -1,118 +1,301 @@
 <!DOCTYPE HTML>
+<html lang="en">
 
-<html lang=”en”>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bodie Lutz</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/index.css">
+</head>
 
-  <head>
+<body>
 
-    <meta charset=”UTF-8″>
+  <!-- Top Navigation Bar -->
+  <nav id="navbar">
+    <a href="#hero" id="nav-brand">Bodie Lutz</a>
+    <div id="nav-links">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#education" class="nav-link">Education</a>
+      <a href="./Resume-Website.pdf" target="_blank" class="nav-link">Resume</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+    <button id="hamburger-btn" aria-label="Toggle navigation">
+      <i class="bi bi-list"></i>
+    </button>
+  </nav>
 
-    <meta name=”viewport” content=”width=device-width, initial-scale=1.0″>
+  <!-- Mobile dropdown menu -->
+  <div id="mobile-menu">
+    <a href="#about" class="nav-link">About</a>
+    <a href="#experience" class="nav-link">Experience</a>
+    <a href="#education" class="nav-link">Education</a>
+    <a href="./Resume-Website.pdf" target="_blank" class="nav-link">Resume</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </div>
 
-    <meta http-equiv=”X-UA-Compatible” content=”ie=edge”>
+  <!-- Single-page scrollable content -->
+  <main id="main-content">
 
-    <title>Bodie Lutz</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/index.css">
-  </head>
-
-  <body>
-
-    <main>
-
-      <!-- Hamburger button - mobile only -->
-      <button id="hamburger-btn" class="d-flex d-lg-none" aria-label="Open navigation">
-        <i class="bi bi-list"></i>
-      </button>
-      <!-- Backdrop overlay -->
-      <div id="sidebar-backdrop"></div>
-
-      <div class="container-fluid">
-        <div id="parent-container" class="d-flex align-items-center row gs-0 min-vh-100">
-
-          <div id="col1" class="col-12 col-lg-3 text-white text-center p-3">
-            
-            <div id="personal">
-              <div class="text-center">
-                <!-- Profile Picture Circle -->
-                <img src="portfolio_picture.JPG" alt="Profile" class="profile-pic mb-3">
-                <!-- Centered Text Below -->
-                <h5>Bodie Lutz</h5>
-                <p>DevOps Engineer</p>
-              </div>
-            </div>
-
-            <div id="socials" classs="mb-3">
-              <div class="row text-center justify-content-center">
-
-                <!-- Email Icon -->
-                <div class="col-3 d-flex justify-content-center">
-                  <div id="email-button" class="icon-circle position-relative">
-                      <a href="mailto:bodielutz@gmail.com">
-                        <!-- Closed Envolope Icon for Static -->  
-                        <i class="bi bi-envelope icon-envelope default"></i>
-                        <!-- Open Envolope Icon on Hover -->
-                        <i class="bi bi-envelope-paper icon-envelope hover"></i>
-                      </a>
-                  </div>
-                </div>
-                <!-- Github Icon -->
-                <!-- <div class="col-3 d-flex justify-content-center">
-                  <div class="icon-circle">
-                      <a href="https://github.com/BodieLutz" target="_blank">  
-                        <i class="bi bi-github icon"></i>
-                      </a>
-                  </div>
-                </div> -->
-                <!-- LinkedIn Icon -->
-                <div class="col-3 d-flex justify-content-center">
-                  <div class="icon-circle">
-                    <a href="https://www.linkedin.com/in/bodie-lutz-40ab78293/" target="_blank">  
-                      <i class="bi bi-linkedin icon"></i>
-                    </a>
-                  </div>
-                </div>
-                <!-- 4th Icon -->
-                <div class="col-3 d-flex justify-content-center">
-                  <div class="icon-circle">
-                    <a href="#">  
-                      <i class="bi bi-chat icon"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div id="links">
-              <div class="d-flex justify-content-center mt-3">
-                <div class="vertical-nav w-100 text-start">
-                    <a id="about-link" href="about.html" class="nav-link mt-2 ps-2 pb-1 pt-1 active">About</a>
-                    <a id="experience-link" href="experience.html" class="nav-link mt-2 ps-2 pb-1 pt-1">Experience</a>
-                    <a id="education-link" href="education.html" class="nav-link mt-2 ps-2 pb-1 pt-1">Education</a>
-                    <!-- <a id="projects-link" href="projects.html" class="nav-link mt-2 ps-2 pb-1 pt-1">Projects</a> -->
-                    <a id="resume-link" href="resume.html" class="nav-link mt-2 ps-2 pb-1 pt-1">Resume</a>
-                    <a id="contact-link" href="contact.html" class="nav-link mt-2 ps-2 pb-1 pt-1">Contact</a>
-                </div>
-              </div>
-            </div>
-          
+    <!-- Hero -->
+    <section id="hero">
+      <div class="hero-content">
+        <img src="portfolio_picture.JPG" alt="Bodie Lutz" class="hero-pic">
+        <div class="hero-text">
+          <h1>Bodie Lutz</h1>
+          <p id="hero-title">DevOps Engineer</p>
+          <p class="hero-tagline">Recent CS grad building cloud infrastructure, scalable systems, and innovative software solutions.</p>
+          <div class="hero-actions">
+            <button class="hero-cta-primary" onclick="document.querySelector('#about').scrollIntoView({behavior:'smooth'})">View My Work</button>
+            <a href="./Resume-Website.pdf" target="_blank">
+              <button>View Resume</button>
+            </a>
           </div>
-
-
-          <div id="col2" class="col-12 col-lg-9 text-start p-2">
-            <div id="shape" class="swipe-transition"></div>
-            <div id="inner_div2" class="d-flex justify-content-center h-100">
-              <iframe id="content-frame" src="about.html" style="border: none; width: 100%; height: 100%;"></iframe>
+          <div class="hero-socials">
+            <div id="email-button" class="icon-circle position-relative">
+              <a href="mailto:bodielutz@gmail.com">
+                <i class="bi bi-envelope icon-envelope default"></i>
+                <i class="bi bi-envelope-paper icon-envelope hover"></i>
+              </a>
             </div>
-            
+            <div class="icon-circle">
+              <a href="https://www.linkedin.com/in/bodie-lutz-40ab78293/" target="_blank">
+                <i class="bi bi-linkedin icon"></i>
+              </a>
+            </div>
           </div>
         </div>
       </div>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-      <script src="index.js"></script>
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    </main>
+    </section>
 
-  </body>
+    <!-- About -->
+    <section id="about">
+      <div class="section-container">
+        <div id="intro">
+          <h4>About Me: Early Days, Big Dreams</h4>
+          <p>
+            Hello! I'm Bodie Lutz, and I am a recent college graduate and a passionate software engineer
+            ready to build innovative and scalable solutions. With a strong foundation in software engineering and
+            expanding my skills in cloud-computing and containerization, I enjoy applying my skills in real-world
+            applications and learning more everyday. Please, explore my portfolio to learn more!
+          </p>
+          <div id="about-btn-div">
+            <button id="resume-btn" onclick="window.open('./Resume-Website.pdf', '_blank')">Check out my resume</button>
+          </div>
+        </div>
 
+        <div id="professional-journey">
+          <h4>Professional Journey</h4>
+          <p>
+            While my professional experience is just beginning, I've developed a strong foundation in software
+            engineering and teamwork through labs and projects during my time in school. I am also excited to
+            expand my knowledge in industry-standard technologies while also being able to apply the skills I've
+            developed throughout my education.
+          </p>
+        </div>
+
+        <div id="skills">
+          <h4>Skills and Expertise</h4>
+          <p>
+            I am proficient in Python, Java, SQL, and JavaScript with some experience in C, C++, and OCaml. A
+            large segment of my experience is within web development where my expertise is primarily in backend
+            development, however I enjoy exploring frontend development and database management as well. I enjoy
+            solving complex problems and learning new technologies, and I am excited to expand my skills past what
+            I've learned in school.
+          </p>
+        </div>
+
+        <div id="personal-story">
+          <h4>Personal Story</h4>
+          <p>
+            All the way back in high school, I thought I wanted to be a mechanical engineer, until I took my first
+            physics course! I was lucky enough to have a great computer science teacher, and I quickly realized that
+            I loved programming. Since then, I have continued to learn and grow as a programmer, and programming has
+            found its way into much of my life. I am excited to continue to learn and grow as a software engineer
+            throughout both my career and in my personal projects.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+      <div class="section-container">
+        <h2>Experience</h2>
+        <div class="timeline">
+          <div class="outer">
+
+            <div class="card">
+              <div class="info">
+                <h3 class="title">Software Engineer</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="info">
+                <h3 class="title">Software Development Intern</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="info">
+                <h3 class="title">DECtech Lead</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+      <div class="section-container">
+        <h2>Education</h2>
+        <h4 class="subtitle">Colorado School of Mines</h4>
+        <div id="mines-div">
+          <ul>
+            <li>Degree Earned: Bachelor of Science in Computer Science</li>
+            <li>Focus: Business</li>
+            <li>Graduation Date: December 2024</li>
+            <li>Honors: Summa Cum Laude</li>
+            <li>Groups: Blue Key Honors Society, Tau Beta Pi Engineering Honors Society</li>
+          </ul>
+        </div>
+
+        <h4 class="subtitle">Notable Coursework</h4>
+        <div id="course-div">
+
+          <button type="button" class="btn btn-primary class-btn" data-bs-toggle="modal" data-bs-target="#algorithms">Algorithms</button>
+          <button type="button" class="btn btn-primary class-btn" data-bs-toggle="modal" data-bs-target="#infosec">Information, Security, and Privacy</button>
+          <button type="button" class="btn btn-primary class-btn" data-bs-toggle="modal" data-bs-target="#webprog">Web Programming</button>
+          <button type="button" class="btn btn-primary class-btn" data-bs-toggle="modal" data-bs-target="#webapps">Web Applications</button>
+          <button type="button" class="btn btn-primary class-btn" data-bs-toggle="modal" data-bs-target="#database">Database Management</button>
+
+          <!-- Algorithms Modal -->
+          <div class="modal fade" id="algorithms" tabindex="-1" aria-labelledby="algorithmsLabel" aria-hidden="true">
+            <div class="modal-dialog"><div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="algorithmsLabel">Algorithms</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                A challenging course introducing algorithm design theory and providing tools to develop, analyze, and implement algorithms.
+                Main topics include graph theory and NP-Completeness. Home of the dreaded <span>AlgoBowl</span> where students compete to
+                create the best solution to an NP-Complete problem.<br><br>
+                Technology used: <ul><li>Python</li></ul>
+              </div>
+              <div class="modal-footer"><button type="button" class="btn btn-secondary modal-btn" data-bs-dismiss="modal">Close</button></div>
+            </div></div>
+          </div>
+
+          <!-- InfoSec Modal -->
+          <div class="modal fade" id="infosec" tabindex="-1" aria-labelledby="infosecLabel" aria-hidden="true">
+            <div class="modal-dialog"><div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="infosecLabel">Information, Security, and Privacy</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                A course exploring cybersecurity concepts with hands-on experience in firewall configuration, intrusion detection, and encryption.
+                Researched methods span various cybersecurity topics across multiple platforms.<br><br>
+                Technology used: <ul><li>Python</li><li>JavaScript</li><li>Apache</li><li>NodeJS</li><li>Linux</li><li>Snort NIDS</li><li>PHP</li></ul>
+              </div>
+              <div class="modal-footer"><button type="button" class="btn btn-secondary modal-btn" data-bs-dismiss="modal">Close</button></div>
+            </div></div>
+          </div>
+
+          <!-- Web Programming Modal -->
+          <div class="modal fade" id="webprog" tabindex="-1" aria-labelledby="webprogLabel" aria-hidden="true">
+            <div class="modal-dialog"><div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="webprogLabel">Web Programming</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                A foundational web development course covering HTML, CSS, JavaScript, and server-side processing.
+                Students create an e-commerce website using an Apache server, MySQL, and PHP.<br><br>
+                Technology used: <ul><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Apache</li><li>MySQL</li><li>PHP</li></ul>
+              </div>
+              <div class="modal-footer"><button type="button" class="btn btn-secondary modal-btn" data-bs-dismiss="modal">Close</button></div>
+            </div></div>
+          </div>
+
+          <!-- Web Applications Modal -->
+          <div class="modal fade" id="webapps" tabindex="-1" aria-labelledby="webappsLabel" aria-hidden="true">
+            <div class="modal-dialog"><div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="webappsLabel">Web Applications</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                A sequel to <span>Web Programming</span> exploring RESTful APIs and advanced frontend development with React.
+                Students build a full-stack application using MongoDB, Express, and NodeJS.<br><br>
+                Technology used: <ul><li>HTML</li><li>CSS</li><li>JavaScript</li><li>React</li><li>MongoDB</li><li>NodeJS</li><li>Express</li><li>RESTful APIs</li></ul>
+              </div>
+              <div class="modal-footer"><button type="button" class="btn btn-secondary modal-btn" data-bs-dismiss="modal">Close</button></div>
+            </div></div>
+          </div>
+
+          <!-- Database Management Modal -->
+          <div class="modal fade" id="database" tabindex="-1" aria-labelledby="databaseLabel" aria-hidden="true">
+            <div class="modal-dialog"><div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="databaseLabel">Database Management</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                Foundational database design and relational database systems using PostgreSQL. Covers SQL, database normalization,
+                and integration with external applications.<br><br>
+                Technology used: <ul><li>PostgreSQL</li><li>Python</li></ul>
+              </div>
+              <div class="modal-footer"><button type="button" class="btn btn-secondary modal-btn" data-bs-dismiss="modal">Close</button></div>
+            </div></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="section-container">
+        <h2>Get In Contact with Me!</h2>
+        <h4>Let's connect! Send me a message if you're interested.</h4>
+        <div class="parent">
+          <div class="contact-card">
+            <i class="bi bi-envelope contact-card-icon"></i>
+            <h5>Email</h5>
+            <p>Email is my preferred method of contact. Drop me a line!</p>
+            <div id="email-btn-div">
+              <button onclick="window.location.href='mailto:bodielutz@gmail.com';">Email Me</button>
+            </div>
+          </div>
+          <div class="contact-card">
+            <i class="bi bi-linkedin contact-card-icon"></i>
+            <h5>LinkedIn</h5>
+            <p>Send me a message or connect with me on LinkedIn!</p>
+            <div id="linkedin-btn-div">
+              <a href="https://www.linkedin.com/in/bodie-lutz-40ab78293/" target="_blank">
+                <button>View my LinkedIn</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="index.js"></script>
+
+</body>
 </html>

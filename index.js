@@ -1,43 +1,56 @@
 document.addEventListener("DOMContentLoaded", () => {
     const links = document.querySelectorAll(".nav-link");
-    const content_frame = document.getElementById("content-frame");
     const hamburger = document.getElementById("hamburger-btn");
-    const col1 = document.getElementById("col1");
-    const backdrop = document.getElementById("sidebar-backdrop");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const navBrand = document.getElementById("nav-brand");
 
-    function openSidebar() {
-        col1.classList.add("sidebar-open");
-        backdrop.classList.add("active");
+    function openMenu() {
+        mobileMenu.classList.add("open");
+        hamburger.querySelector("i").className = "bi bi-x";
     }
 
-    function closeSidebar() {
-        col1.classList.remove("sidebar-open");
-        backdrop.classList.remove("active");
+    function closeMenu() {
+        mobileMenu.classList.remove("open");
+        hamburger.querySelector("i").className = "bi bi-list";
     }
 
     hamburger.addEventListener("click", () => {
-        col1.classList.contains("sidebar-open") ? closeSidebar() : openSidebar();
+        mobileMenu.classList.contains("open") ? closeMenu() : openMenu();
     });
 
-    backdrop.addEventListener("click", closeSidebar);
-
-    links.forEach((link, index) => {
-      link.addEventListener("click", (e) => {
+    navBrand.addEventListener("click", (e) => {
         e.preventDefault();
-
-        // Remove active class from all links
-        links.forEach((l) => l.classList.remove("active"));
-        // Add active class to the clicked link
-        link.classList.add("active");
-
-        //Get HTML file from link
-        const href = link.getAttribute("href");
-
-        content_frame.setAttribute("src", href);
-
-        // Close sidebar on mobile after navigation
-        closeSidebar();
-      });
+        document.getElementById("hero").scrollIntoView({ behavior: "smooth" });
+        links.forEach(l => l.classList.remove("active"));
+        closeMenu();
     });
-  });
-  
+
+    // Nav click: smooth-scroll to section anchor, close mobile menu
+    links.forEach(link => {
+        link.addEventListener("click", (e) => {
+            const href = link.getAttribute("href");
+            if (href.startsWith("#")) {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) target.scrollIntoView({ behavior: "smooth" });
+                links.forEach(l => l.classList.remove("active"));
+                document.querySelectorAll(`.nav-link[href="${href}"]`).forEach(l => l.classList.add("active"));
+            }
+            closeMenu();
+        });
+    });
+
+    // Intersection Observer: keep active nav in sync as user scrolls
+    const sections = document.querySelectorAll("#main-content section[id]");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                links.forEach(l => l.classList.remove("active"));
+                document.querySelectorAll(`.nav-link[href="#${entry.target.id}"]`).forEach(l => l.classList.add("active"));
+            }
+        });
+    }, { threshold: 0.3, rootMargin: "-64px 0px 0px 0px" });
+
+    sections.forEach(section => observer.observe(section));
+});
