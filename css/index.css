@@ -363,104 +363,27 @@ h5 { font-size: clamp(1rem, 2vw, 1.25rem); }
     margin-bottom: var(--space-lg);
 }
 
-#experience .timeline {
-    margin: 0 auto;
-    padding: 20px 0;
-}
-
-#experience .card {
-    position: relative;
-    max-width: 600px;
-    background: transparent;
-    border: none;
-    border-radius: 0;
-}
-
-#experience .card:nth-child(odd) {
-    padding: clamp(15px, 4vw, 30px) 0 clamp(15px, 4vw, 30px) clamp(15px, 4vw, 30px);
-}
-
-#experience .card:nth-child(even) {
-    padding: clamp(15px, 4vw, 30px) clamp(15px, 4vw, 30px) clamp(15px, 4vw, 30px) 0;
-}
-
-#experience .card::before {
-    content: "";
-    position: absolute;
-    width: 50%;
-    border: solid var(--accent-color);
-}
-
-#experience .card:nth-child(odd)::before {
-    left: 0;
-    top: -5px;
-    bottom: -5px;
-    border-width: 5px 0 5px 5px;
-    border-radius: 50px 0 0 50px;
-}
-
-#experience .card:nth-child(even)::before {
-    right: 0;
-    top: 0;
-    bottom: 0;
-    border-width: 5px 5px 5px 0;
-    border-radius: 0 50px 50px 0;
-}
-
-#experience .card:first-child::before {
-    border-top: 0;
-    border-top-left-radius: 0;
-}
-
-#experience .card:last-child:nth-child(odd)::before {
-    border-bottom: 0;
-    border-bottom-left-radius: 0;
-}
-
-#experience .card:last-child:nth-child(even)::before {
-    border-bottom: 0;
-    border-bottom-right-radius: 0;
-}
-
-#experience .info {
+.experience-list {
     display: flex;
     flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.experience-item {
     background: var(--alt-bg-color);
+    border-left: 4px solid var(--accent-color);
     border-radius: 10px;
-    padding: 10px;
+    padding: var(--space-lg);
 }
 
-#experience .title {
+.experience-title {
     color: var(--accent-color);
-    position: relative;
+    margin-bottom: var(--space-sm);
 }
 
-#experience .title::before {
-    content: "";
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background: white;
-    border-radius: 999px;
-    border: 3px solid var(--accent-color);
-}
-
-#experience .card:nth-child(even) > .info > .title {
-    text-align: right;
-}
-
-#experience .card:nth-child(odd) > .info > .title::before {
-    left: -45px;
-}
-
-#experience .card:nth-child(even) > .info > .title::before {
-    right: -45px;
-}
-
-#experience .outer {
-    border-radius: 10px;
-    padding: 10px 20px;
-    width: 100%;
+.experience-item p {
+    font-size: 1.05rem;
+    text-align: left;
 }
 
 /* ===========================
@@ -629,39 +552,8 @@ h5 { font-size: clamp(1rem, 2vw, 1.25rem); }
         justify-content: center;
     }
 
-    #experience .card {
-        max-width: 100%;
-        padding: 15px 0 15px 20px !important;
-    }
-
-    #experience .card::before {
-        left: 0 !important;
-        right: auto !important;
-        top: -5px !important;
-        bottom: -5px !important;
-        border-width: 5px 0 5px 5px !important;
-        border-radius: 50px 0 0 50px !important;
-        width: 50%;
-    }
-
-    #experience .card:nth-child(even) > .info > .title {
-        text-align: left;
-    }
-
-    #experience .card:nth-child(even) > .info > .title::before {
-        right: auto;
-        left: -45px;
-    }
-
     .parent {
         flex-direction: column;
         align-items: stretch;
-    }
-}
-
-@media (max-width: 400px) {
-    #experience .card:nth-child(odd)::before {
-        top: -5px;
-        bottom: -5px;
     }
 }

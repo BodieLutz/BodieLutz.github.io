@@ -1,4 +1,26 @@
-document.addEventListener("DOMContentLoaded", () => {
+// Section partials injected into the shell (index.html) at load.
+const PARTIALS = [
+    ["about-mount", "sections/about.html"],
+    ["experience-mount", "sections/experience.html"],
+    ["education-mount", "sections/education.html"],
+    ["contact-mount", "sections/contact.html"],
+];
+
+async function loadPartials() {
+    await Promise.all(PARTIALS.map(async ([id, url]) => {
+        const mount = document.getElementById(id);
+        if (!mount) return;
+        try {
+            const res = await fetch(url);
+            if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+            mount.innerHTML = await res.text();
+        } catch (err) {
+            console.error(`Failed to load ${url}:`, err);
+        }
+    }));
+}
+
+function initNav() {
     const links = document.querySelectorAll(".nav-link");
     const hamburger = document.getElementById("hamburger-btn");
     const mobileMenu = document.getElementById("mobile-menu");
@@ -53,4 +75,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { threshold: 0.3, rootMargin: "-64px 0px 0px 0px" });
 
     sections.forEach(section => observer.observe(section));
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+    await loadPartials();   // inject sections first...
+    initNav();              // ...then wire nav + observer to the now-present sections
 });
