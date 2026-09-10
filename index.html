@@ -1,118 +1,512 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<html lang=”en”>
+  <!-- ==========================================================
+       EDIT: page title, description and social preview metadata
+       ========================================================== -->
+  <title>Bodie Lutz — Software Engineer</title>
+  <meta name="description" content="Software engineer specializing in backend systems and distributed infrastructure. Portfolio, experience, projects and resume." />
+  <meta name="author" content="Your Name" />
+  <meta name="theme-color" content="#141414" />
+  <meta name="color-scheme" content="dark light" />
 
-  <head>
+  <!-- Open Graph / social sharing. Replace the URL once your site is live. -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Your Name — Software Engineer" />
+  <meta property="og:description" content="Software engineer specializing in backend systems and distributed infrastructure." />
+  <meta property="og:url" content="https://username.github.io/repo-name/" />
+  <meta property="og:image" content="assets/profile.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-    <meta charset=”UTF-8″>
+  <link rel="canonical" href="https://username.github.io/repo-name/" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231f1f20'/%3E%3Ctext x='50' y='68' font-family='system-ui,sans-serif' font-size='52' font-weight='700' fill='%2338bdf8' text-anchor='middle'%3EBL%3C/text%3E%3C/svg%3E" />
 
-    <meta name=”viewport” content=”width=device-width, initial-scale=1.0″>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 
-    <meta http-equiv=”X-UA-Compatible” content=”ie=edge”>
+  <!-- Applied before first paint so the page never flashes the wrong theme. -->
+  <script>
+    (function () {
+      var stored = localStorage.getItem('theme');
+      if (stored === 'light' || stored === 'dark') {
+        document.documentElement.setAttribute('data-theme', stored);
+      }
+    })();
+  </script>
+</head>
 
-    <title>Bodie Lutz</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/index.css">
-  </head>
+<body>
 
-  <body>
+  <!-- ============================ ICON SPRITE ============================ -->
+  <svg width="0" height="0" class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-10 6L2 7" />
+    </symbol>
+    <symbol id="i-github" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+    </symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" />
+    </symbol>
+    <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><path d="M14 2v6h6" /><path d="M16 13H8M16 17H8" />
+    </symbol>
+    <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><path d="m7 10 5 5 5-5" /><path d="M12 15V3" />
+    </symbol>
+    <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><path d="M15 3h6v6" /><path d="M10 14 21 3" />
+    </symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M7 17 17 7" /><path d="M7 7h10v10" />
+    </symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
+    </symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="4.2" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+    </symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
+    </symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M3 6h18M3 12h18M3 18h18" />
+    </symbol>
+    <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M18 6 6 18M6 6l12 12" />
+    </symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="9" y="9" width="13" height="13" rx="2" /><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+    </symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m20 6-11 11-5-5" />
+    </symbol>
+  </svg>
 
-    <main>
+  <header class="nav" id="nav">
+    <div class="wrap nav__inner">
+      <a class="nav__brand" href="#top">
+        <span class="nav__mark" aria-hidden="true">BL</span>
+        <span class="nav__name">Bodie Lutz</span>
+      </a>
 
-      <!-- Hamburger button - mobile only -->
-      <button id="hamburger-btn" class="d-flex d-lg-none" aria-label="Open navigation">
-        <i class="bi bi-list"></i>
-      </button>
-      <!-- Backdrop overlay -->
-      <div id="sidebar-backdrop"></div>
+      <nav class="nav__links" id="nav-links" aria-label="Section navigation">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <!-- <a href="#projects">Projects</a> -->
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-      <div class="container-fluid">
-        <div id="parent-container" class="d-flex align-items-center row gs-0 min-vh-100">
+      <div class="nav__actions">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch to dark theme">
+          <svg class="icon icon--sun" aria-hidden="true"><use href="#i-sun" /></svg>
+          <svg class="icon icon--moon" aria-hidden="true"><use href="#i-moon" /></svg>
+        </button>
+        <button class="icon-btn nav__burger" id="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+          <svg class="icon icon--menu" aria-hidden="true"><use href="#i-menu" /></svg>
+          <svg class="icon icon--close" aria-hidden="true"><use href="#i-close" /></svg>
+        </button>
+      </div>
+    </div>
+    <div class="nav__progress" id="progress" aria-hidden="true"></div>
+  </header>
 
-          <div id="col1" class="col-12 col-lg-3 text-white text-center p-3">
+  <main id="main">
+    
+    <section class="hero" id="top">
+      <div class="wrap hero__inner">
+        <div class="hero__text">
+
+          <h1 class="hero__name">Bodie Lutz</h1>
+          <p class="hero__title">Software Engineer</p>
+          <p class="hero__blurb">
+            DevOps engineer obsessed with optimizing systems for efficiency and reliability, transforming operational complexity into seamless, scalable infrastructure.
+          </p>
+
+          <p class="hero__meta">
+            <svg class="icon" aria-hidden="true"><use href="#i-pin" /></svg>
+            Denver, CO
+          </p>
+
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="mailto:bodieluts@gmail.com">
+              <svg class="icon" aria-hidden="true"><use href="#i-mail" /></svg>
+              Email me
+            </a>
+            <a class="btn" href="https://www.linkedin.com/in/bodie-lutz" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true"><use href="#i-linkedin" /></svg>
+              LinkedIn
+            </a>
+            <a class="btn" href="assets/resume.pdf" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true"><use href="#i-file" /></svg>
+              Resume
+            </a>
+          </div>
+        </div>
+
+        <div class="hero__photo">
+          <!-- EDIT: swap assets/profile.svg for your own photo, e.g. assets/profile.jpg -->
+          <img src="/assets/" alt="Portrait of Bodie Lutz" width="400" height="400" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== ABOUT ============================== -->
+    <section class="section" id="about">
+      <div class="wrap">
+        <header class="section__head">
+          <p class="eyebrow">01 — About</p>
+          <h2 class="section__title">A bit about me</h2>
+        </header>
+
+        <div class="about">
+          <div class="about__prose">
             
-            <div id="personal">
-              <div class="text-center">
-                <!-- Profile Picture Circle -->
-                <img src="portfolio_picture.JPG" alt="Profile" class="profile-pic mb-3">
-                <!-- Centered Text Below -->
-                <h5>Bodie Lutz</h5>
-                <p>DevOps Engineer</p>
-              </div>
-            </div>
-
-            <div id="socials" classs="mb-3">
-              <div class="row text-center justify-content-center">
-
-                <!-- Email Icon -->
-                <div class="col-3 d-flex justify-content-center">
-                  <div id="email-button" class="icon-circle position-relative">
-                      <a href="mailto:bodielutz@gmail.com">
-                        <!-- Closed Envolope Icon for Static -->  
-                        <i class="bi bi-envelope icon-envelope default"></i>
-                        <!-- Open Envolope Icon on Hover -->
-                        <i class="bi bi-envelope-paper icon-envelope hover"></i>
-                      </a>
-                  </div>
-                </div>
-                <!-- Github Icon -->
-                <!-- <div class="col-3 d-flex justify-content-center">
-                  <div class="icon-circle">
-                      <a href="https://github.com/BodieLutz" target="_blank">  
-                        <i class="bi bi-github icon"></i>
-                      </a>
-                  </div>
-                </div> -->
-                <!-- LinkedIn Icon -->
-                <div class="col-3 d-flex justify-content-center">
-                  <div class="icon-circle">
-                    <a href="https://www.linkedin.com/in/bodie-lutz-40ab78293/" target="_blank">  
-                      <i class="bi bi-linkedin icon"></i>
-                    </a>
-                  </div>
-                </div>
-                <!-- 4th Icon -->
-                <div class="col-3 d-flex justify-content-center">
-                  <div class="icon-circle">
-                    <a href="#">  
-                      <i class="bi bi-chat icon"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div id="links">
-              <div class="d-flex justify-content-center mt-3">
-                <div class="vertical-nav w-100 text-start">
-                    <a id="about-link" href="about.html" class="nav-link mt-2 ps-2 pb-1 pt-1 active">About</a>
-                    <a id="experience-link" href="experience.html" class="nav-link mt-2 ps-2 pb-1 pt-1">Experience</a>
-                    <a id="education-link" href="education.html" class="nav-link mt-2 ps-2 pb-1 pt-1">Education</a>
-                    <!-- <a id="projects-link" href="projects.html" class="nav-link mt-2 ps-2 pb-1 pt-1">Projects</a> -->
-                    <a id="resume-link" href="resume.html" class="nav-link mt-2 ps-2 pb-1 pt-1">Resume</a>
-                    <a id="contact-link" href="contact.html" class="nav-link mt-2 ps-2 pb-1 pt-1">Contact</a>
-                </div>
-              </div>
-            </div>
-          
+            <p>
+              I've been building software solutions since high school, ~7 years of hands-on experience before even stepping into professional engineering. 
+              But my real passion emerged when I discovered DevOps: the intersection of thoughtful infrastructure and elegant automation
+            </p>
+            <p>
+              I'm obsessed with optimization; in my professional work and personal life alike. 
+              Whether it's designing infrastructure or refining my own workflows, I believe in eliminating waste and building systems that work reliably at scale. 
+              That mindset shapes everything I do. 
+            </p>
+            <p>
+              I'm committed to staying sharp in a rapidly evolving landscape, always learning, always improving
+            </p>
           </div>
 
-
-          <div id="col2" class="col-12 col-lg-9 text-start p-2">
-            <div id="shape" class="swipe-transition"></div>
-            <div id="inner_div2" class="d-flex justify-content-center h-100">
-              <iframe id="content-frame" src="about.html" style="border: none; width: 100%; height: 100%;"></iframe>
+          <aside class="about__side">
+            <h3 class="about__sideTitle">Technologies I work with</h3>
+            <div class="chips">
+              <span class="chip">Ansible</span>
+              <span class="chip">AWS</span>
+              <span class="chip">GitLab CI/CD</span>
+              <span class="chip">Python</span>
+              <span class="chip">Linux</span>
+              <span class="chip">Nexus</span>
+              <span class="chip">Docker</span>
+              <span class="chip">Kubernetes</span>
+              <span class="chip">Bash</span>       
             </div>
-            
+
+            <!-- <dl class="stats">
+              <div class="stat">
+                <dt>Years writing code</dt>
+                <dd>5+</dd>
+              </div>
+              <div class="stat">
+                <dt>Services owned in prod</dt>
+                <dd>6</dd>
+              </div>
+              <div class="stat">
+                <dt>OSS contributions</dt>
+                <dd>30+</dd>
+              </div>
+            </dl> -->
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================== EXPERIENCE =========================== -->
+    <section class="section section--alt" id="experience">
+      <div class="wrap">
+        <header class="section__head">
+          <p class="eyebrow">02 — Professional Experience</p>
+          <h2 class="section__title">Where I've worked</h2>
+        </header>
+
+        <ol class="timeline">
+          <li class="timeline__item">
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <article class="card">
+              <div class="card__head">
+                <div>
+                  <h3 class="card__title">Software Engineer T2</h3>
+                  <p class="card__org">CACI</p>
+                </div>
+                <p class="card__date">Mar 2026 — Present</p>
+              </div>
+              <ul class="bullets">
+                <li>Automated server configuration and patch management workflows for ~70 servers by integrating Ansible with GitLab CI/CD pipelines, streamlining OS and application updates while improving consistency and reducing operational overhead</li>
+                <li>Managed AWS server infrastructure in production environments, proactively monitoring resource health and resolving issues to ensure system availability and performance</li>
+                <li>Contributed to an AI-enabled server administration platform that centralized infrastructure management across six distinct environments, leveraging AI-assisted development practices to accelerate delivery while maintaining hands-on technical ownership.</li>
+                <li>Engineered automated recovery workflows leveraging ArcGIS Site Recovery, EBS volume snapshot replacement, Ansible, and Python, reducing RTOs from hours to minutes and enabling one-click disaster recovery through CI/CD pipelines</li>
+              </ul>
+              <div class="chips chips--sm">
+                <span class="chip">Kubernetes</span>
+              </div>
+            </article>
+          </li>
+
+          <li class="timeline__item">
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <article class="card">
+              <div class="card__head">
+                <div>
+                  <h3 class="card__title">Software Engineer T1</h3>
+                  <p class="card__org">CACI</p>
+                </div>
+                <p class="card__date">Jan 2025 — Mar 2026</p>
+              </div>
+              <ul class="bullets">
+                <li>Lorem ipsum gipsum</li>
+                <li>Lorem ipsum gipsum</li>
+                <li>Lorem ipsum gipsum</li>
+              </ul>
+              <div class="chips chips--sm">
+                <span class="chip">AWS</span>
+              </div>
+            </article>
+          </li>
+
+          <li class="timeline__item">
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <article class="card">
+              <div class="card__head">
+                <div>
+                  <h3 class="card__title">Junior Software Engineer</h3>
+                  <p class="card__org">CACI</p>
+                </div>
+                <p class="card__date">Aug 2024 — Jan 2025</p>
+              </div>
+              <ul class="bullets">
+                <li>Lorem ipsum gipsum</li>
+                <li>Lorem ipsum gipsum</li>
+                <li>Lorem ipsum gipsum</li>
+              </ul>
+              <div class="chips chips--sm">
+                <span class="chip">Python</span><span class="chip">Flask</span>
+              </div>
+            </article>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================ EDUCATION ============================ -->
+    <section class="section" id="education">
+      <div class="wrap">
+        <header class="section__head">
+          <p class="eyebrow">03 — Education</p>
+          <h2 class="section__title">Education &amp; Credentials</h2>
+        </header>
+
+        <div class="grid grid--2">
+          <!-- EDIT: your degree(s) -->
+          <article class="card card--edu">
+            <div class="card__head">
+              <div>
+                <h3 class="card__title">B.S. in Computer Science</h3>
+                <p class="card__org">Colorado School of Mines</p>
+              </div>
+              <p class="card__date">2021 — 2024</p>
+            </div>
+            <p class="card__body">
+              Summa Cum Laude &middot; Focus in Business
+            </p>
+            <p class="card__label">Relevant coursework</p>
+            <div class="chips chips--sm">
+              <span class="chip">Algorithms</span><span class="chip">Operating Systems</span>
+              <span class="chip">Information & Security</span><span class="chip">Web Development</span>
+            </div>
+          </article>
+
+          <article class="card card--edu">
+            <div class="card__head">
+              <div>
+                <h3 class="card__title">Certifications</h3>
+                <p class="card__org">Professional development</p>
+              </div>
+            </div>
+            <ul class="bullets">
+              <li>CompTIA Security+ (2025)</li>
+            </ul>
+            <p class="card__label">Also</p>
+            <ul class="bullets">
+              <li>Blue Key Honors Society Member</li>
+              <li>Tau Beta Pi Engineering Honors Member</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= PROJECTS ============================= -->
+    <!-- <section class="section section--alt" id="projects">
+      <div class="wrap">
+        <header class="section__head">
+          <p class="eyebrow">04 — Projects</p>
+          <h2 class="section__title">Things I've built</h2>
+          <p class="section__sub">
+            Side projects and open-source work. Every card links to real code.
+          </p>
+        </header>
+
+        <div class="grid grid--3">
+          
+          <article class="proj">
+            <div class="proj__top">
+              <svg class="proj__icon" aria-hidden="true"><use href="#i-github" /></svg>
+              <span class="badge">Featured</span>
+            </div>
+            <h3 class="proj__title">Project Name</h3>
+            <p class="proj__desc">
+              A distributed key-value store with Raft consensus, written from scratch to
+              understand replication and leader election. Handles 50k writes/sec across a
+              5-node cluster with automatic failover.
+            </p>
+            <div class="chips chips--sm">
+              <span class="chip">Go</span><span class="chip">Raft</span><span class="chip">gRPC</span>
+            </div>
+            <div class="proj__links">
+              <a href="https://github.com/username/project" target="_blank" rel="noopener noreferrer">
+                Source <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow" /></svg>
+              </a>
+              <a href="https://example.com" target="_blank" rel="noopener noreferrer">
+                Live demo <svg class="icon icon--xs" aria-hidden="true"><use href="#i-external" /></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="proj">
+            <div class="proj__top">
+              <svg class="proj__icon" aria-hidden="true"><use href="#i-github" /></svg>
+            </div>
+            <h3 class="proj__title">Project Name</h3>
+            <p class="proj__desc">
+              A full-stack analytics dashboard that ingests streaming events and renders
+              real-time charts. Built with a WebSocket fan-out layer that keeps 1,000+
+              concurrent clients in sync.
+            </p>
+            <div class="chips chips--sm">
+              <span class="chip">TypeScript</span><span class="chip">React</span><span class="chip">Postgres</span>
+            </div>
+            <div class="proj__links">
+              <a href="https://github.com/username/project" target="_blank" rel="noopener noreferrer">
+                Source <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow" /></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="proj">
+            <div class="proj__top">
+              <svg class="proj__icon" aria-hidden="true"><use href="#i-github" /></svg>
+            </div>
+            <h3 class="proj__title">Project Name</h3>
+            <p class="proj__desc">
+              A CLI that turns messy CSV exports into validated, typed schemas. Published to
+              PyPI with 2,000+ downloads and a test suite that runs in under 3 seconds.
+            </p>
+            <div class="chips chips--sm">
+              <span class="chip">Python</span><span class="chip">Click</span><span class="chip">pytest</span>
+            </div>
+            <div class="proj__links">
+              <a href="https://github.com/username/project" target="_blank" rel="noopener noreferrer">
+                Source <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow" /></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <p class="projects__more">
+          <a class="link-arrow" href="https://github.com/username?tab=repositories" target="_blank" rel="noopener noreferrer">
+            See all repositories on GitHub
+            <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow" /></svg>
+          </a>
+        </p>
+      </div>
+    </section> -->
+
+    <!-- ============================== RESUME ============================== -->
+    <section class="section" id="resume">
+      <div class="wrap">
+        <header class="section__head">
+          <p class="eyebrow">05 — Resume</p>
+          <h2 class="section__title">Full resume</h2>
+        </header>
+
+        <div class="resume">
+          <div class="resume__icon" aria-hidden="true">
+            <svg class="icon"><use href="#i-file" /></svg>
+          </div>
+          <div class="resume__text">
+            <h3>Bodie Lutz — DevOps Engineer</h3>
+            <!-- EDIT: update the date whenever you refresh the PDF -->
+            <p class="resume__updated">Last updated September 2026</p>
+          </div>
+          <div class="resume__actions">
+            <a class="btn btn--primary" href="assets/resume.pdf" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg>
+              View PDF
+            </a>
+            <a class="btn" href="assets/resume.pdf" download>
+              <svg class="icon" aria-hidden="true"><use href="#i-download" /></svg>
+              Download
+            </a>
           </div>
         </div>
       </div>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-      <script src="index.js"></script>
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    </main>
+    </section>
 
-  </body>
+    <!-- ============================== CONTACT ============================== -->
+    <section class="section section--alt" id="contact">
+      <div class="wrap">
+        <header class="section__head section__head--center">
+          <p class="eyebrow">06 — Contact</p>
+          <h2 class="section__title">Let's talk</h2>
+          <p class="section__sub">
+            I read every message and reply within a day or two. Please reach out!
+          </p>
+        </header>
 
+        <div class="contact">
+          <!-- EDIT: every value and href below -->
+          <a class="contact__card" href="mailto:bodielutz@gmail.com">
+            <svg class="icon" aria-hidden="true"><use href="#i-mail" /></svg>
+            <span class="contact__label">Email</span>
+            <span class="contact__value" id="email-value">bodielutz@gmail.com</span>
+          </a>
+
+          <a class="contact__card" href="https://www.linkedin.com/in/bodie-lutz" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" aria-hidden="true"><use href="#i-linkedin" /></svg>
+            <span class="contact__label">LinkedIn</span>
+            <span class="contact__value">in/bodie-lutz</span>
+          </a>
+
+          <div class="contact__card contact__card--static">
+            <svg class="icon" aria-hidden="true"><use href="#i-pin" /></svg>
+            <span class="contact__label">Location</span>
+            <span class="contact__value">Denver, CO</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================== FOOTER ============================== -->
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <p>Bodie Lutz - updated <span id="year">2026</span></p>
+      <div class="footer__links">
+        <a href="https://www.linkedin.com/in/bodie-lutz" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg class="icon" aria-hidden="true"><use href="#i-linkedin" /></svg>
+        </a>
+        <a href="mailto:bodielutz@gmail.com" aria-label="Email">
+          <svg class="icon" aria-hidden="true"><use href="#i-mail" /></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
